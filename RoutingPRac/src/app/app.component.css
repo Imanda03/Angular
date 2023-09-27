@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  /* border: 2px solid tomato; */
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  gap: 20px;
+  list-style: none;
+  /* background-color: yellowgreen; */
+  text-decoration: none;
+}
+
+li {
+  font-size: 20px;
+}

@@ -1,1 +1,19 @@
+<form action="" (submit)="onSUbmit()">
+  name :<input type="text" [(ngModel)]="name" name="name" />
 
+  Email :<input type="text" [(ngModel)]="email" name="email" />
+
+  <button type="submit">Submit</button>
+</form>
+
+<br /><br />
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  <tr>
+    <td>{{ name }}</td>
+    <td>{{ email }}</td>
+  </tr>
+</table>

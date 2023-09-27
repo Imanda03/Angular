@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 
@@ -11,4 +11,8 @@ import { MatMenuModule } from '@angular/material/menu';
 })
 export class IfElseComponent {
   booleanItems: boolean = false;
+
+  msgFromChild: string = 'THis is the message from the child component';
+
+  @Input() fromParent: string | undefined;
 }

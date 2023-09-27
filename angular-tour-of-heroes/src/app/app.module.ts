@@ -9,6 +9,7 @@ import { JokesComponent } from './jokes/jokes.component';
 import { LoopEachForComponent } from './loop-each-for/loop-each-for.component';
 import { IfElseComponent } from './if-else/if-else.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Task2Component } from './task2/task2.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeroesComponent,
     JokesComponent,
     LoopEachForComponent,
+    Task2Component,
   ],
   imports: [
     BrowserModule,
