@@ -1,0 +1,33 @@
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+input{
+    width: 70%;
+    height: 6vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label{
+    margin-left: 40px;
+}
+
+button{
+    width: 20%;
+    height: 5vh;
+    font-size: large;
+    font-weight: 700;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(172, 175, 179);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}

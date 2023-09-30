@@ -12,4 +12,11 @@ export class NavbarComponent {
   constructor(private injectionService: InjectionServices) {
     this.injectService = injectionService.ServiceList;
   }
+  addItem(){
+    let newPost = [
+      {id: 5, postTitle: "Post item 5"}
+    ]
+    this.injectionService.addPost(newPost)
+  }
+
 }

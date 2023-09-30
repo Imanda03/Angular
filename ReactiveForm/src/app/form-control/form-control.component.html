@@ -1,0 +1,63 @@
+<div class="container mt-5">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="form-group">
+      <label for="">Full Name</label>
+      <input
+        type="text"
+        class="form-control is-invalid"
+        name="fullName"
+        placeholder="fullName"
+        ngModel
+        #fullName="ngModel"
+        (change)="getValue(fullName)"
+        required
+        [ngClass]="{ 'is-invalid': fullName.touched && fullName.invalid }"
+        minlength="5"
+        maxlength="50"
+      />
+    </div>
+    <div
+      class="alert alert-danger"
+      *ngIf="fullName.touched && fullName.invalid"
+    >
+      Full Name id required..
+    </div>
+    <div class="form-group">
+      <label for="">Email</label>
+      <input
+        type="text"
+        class="form-control"
+        name="emial"
+        placeholder="Email"
+        ngModel
+        #email="ngModel"
+        [ngClass]="{ 'is-invalid': email.touched && email.invalid }"
+        pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+        required
+      />
+    </div>
+    <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+      Email is required..
+    </div>
+
+    <div class="form-group">
+      <label>Details</label>
+      <textarea
+        name="details"
+        id=""
+        cols="30"
+        rows="10"
+        class="form-control"
+        placeholder="Complete your details"
+        ngModel
+        #details="ngModel"
+        required
+        [ngClass]="{ 'is-invalid': details.touched && details.invalid }"
+      ></textarea>
+    </div>
+    <div class="alert alert-danger" *ngIf="details.touched && details.invalid">
+      Details is required..
+    </div>
+    <button class="btn btn-primary" [disabled]="f.invalid">Submit</button>
+  </form>
+</div>
