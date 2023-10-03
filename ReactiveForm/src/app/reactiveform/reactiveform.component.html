@@ -1,0 +1,45 @@
+<div class="container mt-5">
+  <form [formGroup]="form" (ngSubmit)="formSubmit()">
+    <div class="form-group">
+      <label>UserName</label>
+      <input
+        type="text"
+        class="form-control"
+        name="username"
+        formControlName="username"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="!username.untouched && username.invalid"
+      >
+        <div *ngIf="username.errors?.required">UserName is required......</div>
+        <div *ngIf="username.errors?.minlength">
+          The user name must be greater than 5
+        </div>
+        <div *ngIf="username.errors?.pattern">Unvalid username</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        formControlName="password"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="!password.untouched && password.invalid"
+      >
+        <div *ngIf="password.errors?.required">Password is required......</div>
+        <div *ngIf="password.errors?.minlength">
+          The user name must be greater than 5
+        </div>
+        <div *ngIf="password.errors?.maxlength">
+          Password should not be more than 10
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</div>

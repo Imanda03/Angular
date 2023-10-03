@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <form action="" [formGroup]="form">
+    <div class="form-group">
+      <label for="">Username</label>
+      <input type="text" class="form-control" formControlName="username" />
+
+      <div *ngIf="fc.username.errors?.required">
+        <div
+          class="alert alert-danger"
+          *ngIf="fc.username.touched && fc.username.invalid"
+        >
+          username is required......
+        </div>
+      </div>
+      <div *ngIf="fc.username.errors?.minlength">
+        <div
+          class="alert alert-danger"
+          *ngIf="fc.username.touched && fc.username.invalid"
+        >
+          The user name must be greater than 5
+        </div>
+      </div>
+      <div *ngIf="fc.username.errors?.noSpaceValidator">
+        <div
+          class="alert alert-danger"
+          *ngIf="fc.username.touched && fc.username.invalid"
+        >
+          there should not be space
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
