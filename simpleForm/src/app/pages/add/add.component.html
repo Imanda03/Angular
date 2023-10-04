@@ -1,21 +1,27 @@
 <div class="container p-5">
-  <form class="p-5" [formGroup]="form" (click)="addData()">
+  <form class="p-5" [formGroup]="obj.myForm" (click)="addData()">
     <h2>Add Details</h2>
     <div class="form-group mt-4">
       <label class=""> Full Name: </label>
       <input type="text" class="form-control" formControlName="fullname" />
-      <div *ngIf="fc.fullname.errors?.required">
+      <div *ngIf="obj.myForm.get('fullname')?.errors?.['required']">
         <div
           class="alert alert-danger"
-          *ngIf="fc.fullname.touched && fc.fullname.invalid"
+          *ngIf="
+            obj.myForm.get('fullname')?.touched &&
+            obj.myForm.get('fullname')?.invalid
+          "
         >
           fullname is required......
         </div>
       </div>
-      <div *ngIf="fc.fullname.errors?.minlength">
+      <div *ngIf="obj.myForm.get('fullname')?.errors?.['minlength']">
         <div
           class="alert alert-danger"
-          *ngIf="fc.fullname.touched && fc.fullname.invalid"
+          *ngIf="
+            obj.myForm.get('fullname')?.touched &&
+            obj.myForm.get('fullname')?.invalid
+          "
         >
           The name must be greater than 5
         </div>
@@ -24,18 +30,22 @@
     <div class="form-group mt-3">
       <label class=""> Phone No: </label>
       <input type="number" class="form-control" formControlName="phone" />
-      <div *ngIf="fc.phone.errors?.required">
+      <div *ngIf="obj.myForm.get('phone')?.errors">
         <div
           class="alert alert-danger"
-          *ngIf="fc.phone.touched && fc.phone.invalid"
+          *ngIf="
+            obj.myForm.get('phone')?.touched && obj.myForm.get('phone')?.invalid
+          "
         >
           phone number is required......
         </div>
       </div>
-      <div *ngIf="fc.phone.errors?.minlength">
+      <div *ngIf="obj.myForm.get('phone')?.errors?.['minlength']">
         <div
           class="alert alert-danger"
-          *ngIf="fc.phone.touched && fc.phone.invalid"
+          *ngIf="
+            obj.myForm.get('phone')?.touched && obj.myForm.get('phone')?.invalid
+          "
         >
           The phone number must be greater than 9
         </div>
@@ -48,10 +58,13 @@
         class="form-control form-control-lg"
         formControlName="details"
       />
-      <div *ngIf="fc.details.errors?.required">
+      <div *ngIf="obj.myForm.get('details')?.errors?.['required']">
         <div
           class="alert alert-danger"
-          *ngIf="fc.details.touched && fc.phone.invalid"
+          *ngIf="
+            obj.myForm.get('details')?.touched &&
+            obj.myForm.get('details')?.invalid
+          "
         >
           Details is required......
         </div>

@@ -1,1 +1,20 @@
-<p>view works!</p>
+<div class="container mt-5">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Phone No.</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of userDetails; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ data.fullname }}</td>
+        <td>{{ data.phone }}</td>
+        <td>{{ data.details }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

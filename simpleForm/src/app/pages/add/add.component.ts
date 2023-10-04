@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ServiceService } from 'src/app/service/service.service';
+import { Form } from './add';
 
 @Component({
   selector: 'app-add',
@@ -8,35 +9,21 @@ import { ServiceService } from 'src/app/service/service.service';
   styleUrls: ['./add.component.css'],
 })
 export class AddComponent {
-  form: any;
-  constructor(private service: ServiceService, fb: FormBuilder) {
-    this.form = fb.group({
-      fullname: ['', [Validators.required, Validators.minLength(5)]],
-      phone: ['', [Validators.required, Validators.minLength(9)]],
-      details: ['', [Validators.required]],
-      // skills: fb.array([]),
-    });
+  obj : Form = new Form (new FormBuilder())
+  
+  constructor(private service : ServiceService){
   }
-
-  get fc() {
-    return this.form.controls;
-  }
-
-  // addSkills(skill: any) {
-  //   this.fc.skills.push(skill.value);
-  //   skill.value = '';
-  //   console.log(this.form.value);
-  // }
-
-  // removeSkill(index: any) {
-  //   this.fc.skills.removeAt(index);
-  // }
 
   addData() {
-    // let anyType: any;
-    // anyType = this.fc.value;
-    this.service.addData(this.fc);
-    // console.log(this.fc);
-    console.log(this.service.userDetails);
+   if(this.obj.myForm.valid){
+    this.service.addData({
+      fullname: this.obj.myForm.get('fullname')?.value,
+      phone: this.obj.myForm.get('phone')?.value,
+      details: this.obj.myForm.get('details')?.value
+    })
+    this.obj.myForm.get('fullname')?.reset()
+    this.obj.myForm.get('phone')?.reset()
+    this.obj.myForm.get('details')?.reset()
   }
+}
 }
