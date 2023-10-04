@@ -1,0 +1,47 @@
+<div mat-dialog-title>Add Employess</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstname" placeholder="Ex. Anish" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastname" placeholder="Ex. Sharma" />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          formControlName="email"
+          type="email"
+          placeholder="Ex. example@gmail.com"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input
+          matInput
+          formControlName="phone"
+          type="number"
+          placeholder="Ex. XXXXXXXXXX"
+        />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-label><b>Gender</b></mat-label>
+      <mat-radio-group aria-label="Select an option" formControlName="gender">
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+        <mat-radio-button value="others">Others</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+  <div mat-dialog-actions class="action">
+    <button mat-flat-button>Cancel</button>
+    <button mat-flat-button color="primary">Save</button>
+  </div>
+</form>

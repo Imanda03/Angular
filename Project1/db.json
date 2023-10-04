@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employees": [
+    {
+      "firstname": "Anish",
+      "lastname": "Sharma",
+      "email": "anish@gmail.com",
+      "phone": 9803708637,
+      "gender": "male",
+      "id": 1
+    },
+    {
+      "firstname": "Nirmala",
+      "lastname": "Sharma",
+      "email": "nirmala@g.com",
+      "phone": 9803708637,
+      "gender": "female",
+      "id": 2
+    }
+  ]
+}
